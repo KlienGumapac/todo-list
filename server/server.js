@@ -9,8 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // MongoDB Connection
-const MONGODB_URI = 'mongodb+srv://kliengumapac5512:eWq6F9EVhM9ksxVo@todo.ywejoho.mongodb.net/?retryWrites=true&w=majority&appName=todo';
-const JWT_SECRET = 'your-super-secret-jwt-key-change-this-in-production';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://kliengumapac5512:eWq6F9EVhM9ksxVo@todo.ywejoho.mongodb.net/?retryWrites=true&w=majority&appName=todo';
+const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
