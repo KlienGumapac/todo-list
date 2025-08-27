@@ -95,14 +95,18 @@ export const useAuth = (): UseAuthReturn => {
   const logout = useCallback(async () => {
     try {
       setLoading(true);
-      await authAPI.logout();
-    } catch (error) {
-      console.error('Error during logout:', error);
-    } finally {
+      
       setUser(null);
       setToken(null);
       removeFromStorage(STORAGE_KEYS.AUTH_TOKEN);
       removeFromStorage(STORAGE_KEYS.USER_DATA);
+      
+      authAPI.logout().catch(error => {
+        console.error('Error during logout:', error);
+      });
+    } catch (error) {
+      console.error('Error during logout:', error);
+    } finally {
       setLoading(false);
     }
   }, []);
