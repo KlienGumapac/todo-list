@@ -1,6 +1,6 @@
 import React from 'react';
-import type { User } from '../../types';
-import Button from '../ui/Button';
+import type { User } from '@/types';
+import Button from '@/components/ui/Button';
 
 interface HeaderProps {
   user: User | null;

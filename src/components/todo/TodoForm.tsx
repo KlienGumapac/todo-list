@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import type { CreateTodoData } from '../../types';
-import { VALIDATION_RULES } from '../../constants';
-import Modal from '../ui/Modal';
-import Input from '../ui/Input';
-import Button from '../ui/Button';
+import type { CreateTodoData } from '@/types';
+import { VALIDATION_RULES } from '@/constants';
+import Modal from '@/components/ui/Modal';
+import Input from '@/components/ui/Input';
+import Button from '@/components/ui/Button';
 
 interface TodoFormProps {
   isOpen: boolean;

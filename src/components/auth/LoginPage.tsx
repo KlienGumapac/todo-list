@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../hooks/useAuth';
-import { validateEmail, validatePassword } from '../../utils';
-import { VALIDATION_RULES } from '../../constants';
-import Button from '../ui/Button';
-import Input from '../ui/Input';
+import { useAuth } from '@/hooks/useAuth';
+import { validateEmail, validatePassword } from '@/utils';
+import { VALIDATION_RULES } from '@/constants';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { useTodos } from '../hooks/useTodos';
-import TodoList from './todo/TodoList';
-import TodoForm from './todo/TodoForm';
-import TodoFilters from './todo/TodoFilters';
-import Header from './layout/Header';
-import Button from './ui/Button';
+import { useAuth } from '@/hooks/useAuth';
+import { useTodos } from '@/hooks/useTodos';
+import TodoList from '@/components/todo/TodoList';
+import TodoForm from '@/components/todo/TodoForm';
+import TodoFilters from '@/components/todo/TodoFilters';
+import Header from '@/components/layout/Header';
+import Button from '@/components/ui/Button';
 
 const Dashboard: React.FC = () => {
   const { user, logout } = useAuth();

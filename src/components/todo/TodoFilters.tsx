@@ -1,6 +1,6 @@
 import React from 'react';
-import type { TodoFilter, TodoSort } from '../../types';
-import { TODO_FILTERS, SORT_OPTIONS } from '../../constants';
+import type { TodoFilter, TodoSort } from '@/types';
+import { TODO_FILTERS, SORT_OPTIONS } from '@/constants';
 
 interface TodoFiltersProps {
   filter: TodoFilter;

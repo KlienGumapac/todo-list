@@ -1,4 +1,4 @@
-import type { Todo, TodoFilter, TodoSort } from '../types';
+import type { Todo, TodoFilter, TodoSort } from '@/types';
 
 export const formatDate = (date: string | Date): string => {
   const d = new Date(date);

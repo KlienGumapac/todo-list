@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { Todo, CreateTodoData, UpdateTodoData, TodoFilter, TodoSort } from '../types';
-import { todoAPI } from '../utils/api';
-import { filterTodos, sortTodos } from '../utils';
+import type { Todo, CreateTodoData, UpdateTodoData, TodoFilter, TodoSort } from '@/types';
+import { todoAPI } from '@/utils/api';
+import { filterTodos, sortTodos } from '@/utils';
 
 interface UseTodosReturn {
   todos: Todo[];

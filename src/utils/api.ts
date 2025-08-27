@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosResponse } from 'axios';
-import { API_BASE_URL, STORAGE_KEYS } from '../constants';
+import { API_BASE_URL, STORAGE_KEYS } from '@/constants';
 import type { 
   User, 
   UserCredentials, 
@@ -10,7 +10,7 @@ import type {
   UpdateTodoData,
   ApiResponse,
   AuthResponse 
-} from '../types';
+} from '@/types';
 
 
 const api: AxiosInstance = axios.create({

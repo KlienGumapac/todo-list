@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import type { Todo, UpdateTodoData } from '../../types';
-import { formatDate, isOverdue, getPriorityLabel, getPriorityColor } from '../../utils';
-import { PRIORITY_COLORS } from '../../constants';
-import Button from '../ui/Button';
+import type { Todo, UpdateTodoData } from '@/types';
+import { formatDate, isOverdue, getPriorityLabel, getPriorityColor } from '@/utils';
+import { PRIORITY_COLORS } from '@/constants';
+import Button from '@/components/ui/Button';
 
 interface TodoItemProps {
   todo: Todo;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useAuth } from './hooks/useAuth';
-import LoginPage from './components/auth/LoginPage';
-import RegisterPage from './components/auth/RegisterPage';
-import Dashboard from './components/Dashboard';
-import LoadingSpinner from './components/ui/LoadingSpinner';
+import { useAuth } from '@/hooks/useAuth';
+import LoginPage from '@/components/auth/LoginPage';
+import RegisterPage from '@/components/auth/RegisterPage';
+import Dashboard from '@/components/Dashboard';
+import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();

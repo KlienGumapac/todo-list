@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { User, UserCredentials, RegisterData, AuthResponse } from '../types';
-import { authAPI } from '../utils/api';
-import { getFromStorage, setToStorage, removeFromStorage } from '../utils';
-import { STORAGE_KEYS } from '../constants';
+import type { User, UserCredentials, RegisterData, AuthResponse } from '@/types';
+import { authAPI } from '@/utils/api';
+import { getFromStorage, setToStorage, removeFromStorage } from '@/utils';
+import { STORAGE_KEYS } from '@/constants';
 
 interface UseAuthReturn {
   user: User | null;

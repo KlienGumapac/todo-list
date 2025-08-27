@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Todo, UpdateTodoData } from '../../types';
+import type { Todo, UpdateTodoData } from '@/types';
 import TodoItem from './TodoItem';
 
 interface TodoListProps {
