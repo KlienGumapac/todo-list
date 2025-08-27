@@ -13,7 +13,6 @@ import type {
 } from '../types';
 
 
-// Create axios instance
 const api: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -21,7 +20,6 @@ const api: AxiosInstance = axios.create({
   },
 });
 
-// Storage utilities (duplicated to avoid circular imports)
 const getFromStorage = <T>(key: string): T | null => {
   try {
     const item = localStorage.getItem(key);
@@ -40,7 +38,6 @@ const removeFromStorage = (key: string): void => {
   }
 };
 
-// Request interceptor to add auth token
 api.interceptors.request.use(
   (config) => {
     const token = getFromStorage<string>(STORAGE_KEYS.AUTH_TOKEN);
@@ -54,12 +51,11 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor to handle auth errors
 api.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
+      
       removeFromStorage(STORAGE_KEYS.AUTH_TOKEN);
       removeFromStorage(STORAGE_KEYS.USER_DATA);
       window.location.href = '/login';
@@ -68,7 +64,6 @@ api.interceptors.response.use(
   }
 );
 
-// Auth API
 export const authAPI = {
   login: async (credentials: UserCredentials): Promise<AuthResponse> => {
     const response = await api.post<ApiResponse<AuthResponse>>('/auth/login', credentials);
@@ -90,7 +85,6 @@ export const authAPI = {
   },
 };
 
-// Todo API
 export const todoAPI = {
   getAll: async (): Promise<Todo[]> => {
     const response = await api.get<ApiResponse<Todo[]>>('/todos');
@@ -122,7 +116,6 @@ export const todoAPI = {
   },
 };
 
-// Error handling utility
 export const handleApiError = (error: any): string => {
   if (error.response?.data?.message) {
     return error.response.data.message;

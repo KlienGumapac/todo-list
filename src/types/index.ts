@@ -1,4 +1,3 @@
-// User related types
 export interface User {
   _id: string;
   email: string;
@@ -16,7 +15,6 @@ export interface RegisterData extends UserCredentials {
   name: string;
 }
 
-// Todo related types
 export interface Todo {
   _id: string;
   title: string;
@@ -44,7 +42,6 @@ export interface UpdateTodoData {
   dueDate?: string;
 }
 
-// API Response types
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
@@ -57,11 +54,9 @@ export interface AuthResponse {
   token: string;
 }
 
-// Filter types
 export type TodoFilter = 'all' | 'active' | 'completed';
 export type TodoSort = 'createdAt' | 'dueDate' | 'priority' | 'title';
 
-// UI State types
 export interface TodoState {
   todos: Todo[];
   loading: boolean;
@@ -78,7 +73,6 @@ export interface AuthState {
   error: string | null;
 }
 
-// Component Props types
 export interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;

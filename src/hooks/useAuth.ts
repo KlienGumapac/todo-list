@@ -21,7 +21,6 @@ export const useAuth = (): UseAuthReturn => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Initialize auth state from localStorage
   useEffect(() => {
     const initializeAuth = async () => {
       try {
@@ -32,12 +31,11 @@ export const useAuth = (): UseAuthReturn => {
           setToken(storedToken);
           setUser(storedUser);
           
-          // Verify token is still valid
           try {
             const currentUser = await authAPI.getCurrentUser();
             setUser(currentUser);
           } catch (error) {
-            // Token is invalid, clear storage
+          
             removeFromStorage(STORAGE_KEYS.AUTH_TOKEN);
             removeFromStorage(STORAGE_KEYS.USER_DATA);
             setToken(null);

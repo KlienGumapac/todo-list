@@ -67,7 +67,7 @@ todolist/
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/KlienGumapac/todo-list.git
    cd todolist
    ```
 
@@ -157,3 +157,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Tailwind CSS for the utility-first CSS framework
 - MongoDB for the database solution
 - Express.js for the web framework
+
+## Developer
+
+**Klien Gumapac** - [GitHub Profile](https://github.com/KlienGumapac)
+
+A 21-year-old developer from Polomolok, South Cotabato, Philippines. Graduate from South East Asian Institute of Technology (SEAIT) with expertise in ReactJS, NodeJS, TailwindCSS, NextJS, and GraphQL.

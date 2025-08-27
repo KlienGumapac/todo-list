@@ -6,7 +6,6 @@ import RegisterPage from './components/auth/RegisterPage';
 import Dashboard from './components/Dashboard';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 
-// Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
 
@@ -21,7 +20,6 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return user ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
-// Public Route Component (redirects to dashboard if already authenticated)
 const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
 

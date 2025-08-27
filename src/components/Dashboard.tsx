@@ -42,7 +42,7 @@ const Dashboard: React.FC = () => {
       await createTodo(todoData);
       setShowAddForm(false);
     } catch (error) {
-      // Error is handled by the useTodos hook
+      
     }
   };
 
@@ -78,7 +78,6 @@ const Dashboard: React.FC = () => {
           </div>
         )}
 
-        {/* Controls Section */}
         <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <TodoFilters
             filter={filter}
@@ -97,7 +96,6 @@ const Dashboard: React.FC = () => {
           </Button>
         </div>
 
-        {/* Todo List */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           {loading ? (
             <div className="p-8 text-center">
@@ -114,7 +112,6 @@ const Dashboard: React.FC = () => {
           )}
         </div>
 
-        {/* Add Todo Modal */}
         {showAddForm && (
           <TodoForm
             isOpen={showAddForm}

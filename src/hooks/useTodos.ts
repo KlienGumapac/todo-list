@@ -29,7 +29,6 @@ export const useTodos = (): UseTodosReturn => {
   const [sortBy, setSortBy] = useState<TodoSort>('createdAt');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
-  // Load todos on mount
   useEffect(() => {
     loadTodos();
   }, []);
@@ -110,7 +109,6 @@ export const useTodos = (): UseTodosReturn => {
     setError(null);
   }, []);
 
-  // Compute filtered and sorted todos
   const filteredTodos = useCallback(() => {
     const filtered = filterTodos(todos, filter);
     return sortTodos(filtered, sortBy, sortOrder);

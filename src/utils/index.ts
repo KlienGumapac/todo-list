@@ -1,6 +1,5 @@
 import type { Todo, TodoFilter, TodoSort } from '../types';
 
-// Date formatting utilities
 export const formatDate = (date: string | Date): string => {
   const d = new Date(date);
   return d.toLocaleDateString('en-US', {
@@ -25,7 +24,6 @@ export const isOverdue = (dueDate: string): boolean => {
   return new Date(dueDate) < new Date();
 };
 
-// Validation utilities
 export const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -39,7 +37,6 @@ export const validateName = (name: string): boolean => {
   return name.trim().length >= 2;
 };
 
-// Todo filtering and sorting utilities
 export const filterTodos = (todos: Todo[], filter: TodoFilter): Todo[] => {
   switch (filter) {
     case 'active':
@@ -82,7 +79,6 @@ export const sortTodos = (todos: Todo[], sortBy: TodoSort, sortOrder: 'asc' | 'd
   return sortedTodos;
 };
 
-// Local storage utilities
 export const getFromStorage = <T>(key: string): T | null => {
   try {
     const item = localStorage.getItem(key);
@@ -109,7 +105,6 @@ export const removeFromStorage = (key: string): void => {
   }
 };
 
-// String utilities
 export const truncateText = (text: string, maxLength: number): string => {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength) + '...';
@@ -119,7 +114,6 @@ export const capitalizeFirst = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-// Priority utilities
 export const getPriorityLabel = (priority: string): string => {
   return capitalizeFirst(priority);
 };
@@ -133,7 +127,6 @@ export const getPriorityColor = (priority: string): string => {
   return colors[priority as keyof typeof colors] || colors.medium;
 };
 
-// Debounce utility
 export const debounce = <T extends (...args: any[]) => any>(
   func: T,
   delay: number
